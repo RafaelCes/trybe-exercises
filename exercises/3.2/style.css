@@ -1,0 +1,36 @@
+        body{
+            font-size: 16px;
+        }
+        h1{
+            font-size: 65px;
+            color: orange;
+            font-family: sans-serif;
+        }
+        p{
+            font-weight: 600;
+            font-size: 3em;
+        }
+        ul{
+            background-color: palegreen;
+            
+
+        }
+        .text{
+            background-color: palevioletred;
+            font-style: oblique;
+            line-height: 20px;
+            text-align: justify;
+            text-decoration: unset;
+        }
+        #amr{
+            background-color: yellow;
+        }
+        #ver{
+            background-color: red;
+        }
+        #mrm{
+            background-color: brown;
+        }
+
+
+  
