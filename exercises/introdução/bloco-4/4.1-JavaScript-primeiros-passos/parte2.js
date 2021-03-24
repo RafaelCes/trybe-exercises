@@ -1,0 +1,10 @@
+const name = "Rafael Cavalcante";
+const birthCity = "Belo Horizonte";
+let birthYear = 1992;
+console.log(name);
+console.log(birthCity);
+console.log(birthYear);
+birthYear = 2020;
+console.log(birthYear);
+birthCity = "Manaus";
+console.log(birthCity);
