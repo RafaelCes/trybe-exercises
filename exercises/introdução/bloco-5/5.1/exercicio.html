@@ -34,7 +34,7 @@
     <div class="main-content">
       <div class="center-content">
         <p>Texto padrão do nosso site</p>
-        <p>-----</p>
+        <p id="blank">-----</p>
         <p>Trybe</p>
       </div>
     </div>
@@ -51,6 +51,39 @@
  Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
  Crie uma função que exiba o conteúdo de todas as tags <p> no console.
         */
+       function inTwoYears() {
+           let text = 'top do top empregado no canada';
+           document.getElementById('blank').innerText = text;
+           return ;
+       }
+       inTwoYears();
+
+       function makeItGreen() {
+           document.getElementsByClassName('main-content')[0].style.background = 'rgb(76,164,109)';
+       }
+       makeItGreen();
+
+       function makeItWhite() {
+        document.getElementsByClassName('center-content')[0].style.background = 'white';
+       }
+       makeItWhite();
+       function pasquale() {
+           let correto = 'Exercício 5.1 - JavaScript';
+           document.getElementsByClassName('title')[0].innerText = correto;
+       }
+       pasquale();
+
+       function upperCase() {
+           document.getElementsByTagName('p')[2].style.textTransform = 'uppercase'; 
+       }
+       upperCase();
+
+       function printP(){
+            for(let index = 0; index < 3; index += 1){
+                console.log(document.getElementsByTagName('p')[index].innerText);
+            }
+       }
+       printP();
     </script>
   </body>
 </html>
