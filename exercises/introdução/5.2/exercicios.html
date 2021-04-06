@@ -63,34 +63,34 @@
         document.body.appendChild(element);
         //2 Adicione a tag div com a classe main-content como filho da tag body ;
         element = document.createElement('div');
-        element.id = 'main-content';
+        element.className = 'main-content';
         document.body.appendChild(element);
         //3 Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
         element = document.createElement('div');
-        element.id = 'center-content';
-        document.getElementById('main-content').appendChild(element);
+        element.className = 'center-content';
+        document.getElementsByClassName('main-content')[0].appendChild(element);
         //4 Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
         element = document.createElement('p');
         element.innerText = 'Texto padrão do nosso site';
-        document.getElementById('center-content').appendChild(element);
+        document.getElementsByClassName('center-content')[0].appendChild(element);
         //5 Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
         element = document.createElement('div');
-        element.id = 'left-content';
-        document.getElementById('main-content').appendChild(element);
+        element.className = 'left-content';
+        document.getElementsByClassName('main-content')[0].appendChild(element);
         //6 Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
         element = document.createElement('div');
-        element.id = 'right-content';
-        document.getElementById('main-content').appendChild(element);
+        element.className = 'right-content';
+        document.getElementsByClassName('main-content')[0].appendChild(element);
         //7 Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5;
         element = document.createElement('img');
         element.src = 'https://picsum.photos/200';
-        element.id = 'small-image';
-        document.getElementById('left-content').appendChild(element);
+        element.className = 'small-image';
+        document.getElementsByClassName('left-content')[0].appendChild(element);
         //8 Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
         let list = ['um','dois','tres','quatro','cinco','seis','sete','oito','nove','dez'];
         element = document.createElement('ul');
         element.id = 'list';
-        document.getElementById('right-content').appendChild(element);
+        document.getElementsByClassName('right-content')[0].appendChild(element);
         for (let index = 0; index < list.length; index += 1) {
             element = document.createElement('ul');
             element.innerText = list[index];
@@ -100,7 +100,7 @@
         for (let index = 0; index < 3; index += 1) {
         element = document.createElement('h3');
         element.innerText = 'texto h3';
-        document.getElementById('main-content').appendChild(element);
+        document.getElementsByClassName('main-content')[0].appendChild(element);
         }
         // Agora que você criou muita coisa, vamos fazer algumas alterações e remoções:
         //10 Adicione a classe title na tag h1 criada;
@@ -112,9 +112,11 @@
             element.className = 'description';
         }
         //12 Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild() ;
-        element = document.getElementById('left-content');
-        document.getElementById('main-content').removeChild(element);
+         element = document.getElementsByClassName('left-content')[0];
+         document.getElementsByClassName('main-content')[0].removeChild(element);
         //13 Centralize o div criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto do div ;
+        element = document.getElementsByClassName('center-content')[0];
+        element.style.marginRight = 'auto'; 
         //14 Troque a cor de fundo do elemento pai da div criada no passo 3 (aquela que possui a classe center-content ) para a cor verde;
         //15 Remova os dois últimos elementos ( nove e dez ) da lista criada no passo 8.
 
