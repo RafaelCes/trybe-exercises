@@ -67,6 +67,9 @@
         element.id = 'main-content';
         document.body.appendChild(element);
         // Adicione a tag div com a classe center-content como filho da tag div criada no passo 2;
+        element = document.createElement('div');
+        element.id = 'center-content';
+        document.getElementById('main-content').appendChild(element);
         // Adicione a tag p como filho do div criado no passo 3 e coloque algum texto;
         // Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
         // Adicione a tag div com a classe right-content como filho da tag div criada no passo 2;
