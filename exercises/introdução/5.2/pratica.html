@@ -11,3 +11,47 @@
       <div id="quartoEUltimoFilho"></div>
     </div>
   </div>
+  <!-- Acesse o elemento elementoOndeVoceEsta .
+Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
+Acesse o primeiroFilhoDoFilho e adicione um texto a ele. Você se lembra dos vídeos da aula anterior, como fazer isso?
+Acesse o primeiroFilho a partir de pai .
+Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta .
+Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta .
+Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta .
+Agora acesse o terceiroFilho a partir de pai . -->
+  <script> 
+    console.log(document.getElementById('elementoOndeVoceEsta'));
+    console.log(document.getElementById('elementoOndeVoceEsta').parentNode);
+    document.getElementById('primeiroFilhoDoFilho').innerText = 'texto';
+    console.log(document.getElementById('pai').firstElementChild);
+    console.log(document.getElementById('elementoOndeVoceEsta').previousElementSibling);
+    console.log(document.getElementById('elementoOndeVoceEsta').nextSibling);
+    console.log(document.getElementById('elementoOndeVoceEsta').nextElementSibling);
+    console.log(document.getElementById('pai').firstElementChild.nextElementSibling.nextElementSibling);
+// Crie um irmão para elementoOndeVoceEsta .
+// Crie um filho para elementoOndeVoceEsta .
+// Crie um filho para primeiroFilhoDoFilho .
+// A partir desse filho criado, acesse terceiroFilho .
+    let element = document.createElement('div');
+    element.id = 'irmãoDoElementoOndeVoceEsta';
+    let pai = document.getElementById('pai');
+    pai.appendChild(element);
+    element.id = 'filhoDoElementoOndeVoceEsta';
+    pai = document.getElementById('elementoOndeVoceEsta');
+    pai.appendChild(element);
+    element.id = 'filhoDoPrimeiroFilhoDoFilho';
+    pai = document.getElementById('primeiroFilhoDoFilho');
+    pai.appendChild(element);
+    console.log(document.getElementById('filhoDoPrimeiroFilhoDoFilho').parentNode.parentNode.nextElementSibling);
+    // Remova todos os elementos da página, menos pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+    pai = document.getElementById('pai');
+    element = document.getElementById('quartoEUltimoFilho');
+    pai.removeChild(element);
+    element = document.getElementById('terceiroFilho');
+    pai.removeChild(element);
+    element = document.getElementById('primeiroFilho');
+    pai.removeChild(element);
+    pai = document.getElementById('elementoOndeVoceEsta');
+    element = document.getElementById('segundoEUltimoFilhoDoFilho');
+    pai.removeChild(element);
+  </script>
