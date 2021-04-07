@@ -27,16 +27,24 @@ function changeTechText() {
 input.addEventListener('keyup', changeTechText);
 //  4Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 // redirecione para alguma página;
+// 4.1 Que tal redirecionar para seu portifólio?
 function webPortifolio() {
   const win = window.open('https://rafaelces.github.io/', '_blank');
   win.focus();
 }
 myWebpage.addEventListener('dblclick',webPortifolio);
-// 4.1 Que tal redirecionar para seu portifólio?
+
 
 //  5Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 // a cor do mesmo;
-
+function changeColorBlue(event) {
+  event.target.style.color = 'blue';
+}
+function changeColorWhite(event) {
+  event.target.style.color = 'white';
+}
+myWebpage.addEventListener('mouseenter', changeColorBlue);
+myWebpage.addEventListener('mouseleave', changeColorWhite)
 // Segue abaixo um exemplo do uso de event.target:
 
 
