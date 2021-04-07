@@ -72,7 +72,7 @@ function changeColor() {
   else {
     color = 'white';
   }
-  for (index = 0; index < holidayList.length; index += 1) {
+  for (let index = 0; index < holidayList.length; index += 1) {
     holidayList[index].style.backgroundColor = color;
   }
 }
@@ -110,7 +110,7 @@ function changeText() {
   else {
     text = ['SEXTOU', 'SEXTOU', 'SEXTOU', 'SEXTOU'];
   }
-  for (index = 0; index < frydayList.length; index += 1) {
+  for (let index = 0; index < frydayList.length; index += 1) {
     frydayList[index].innerText = text[index];
   }
 }
@@ -121,7 +121,30 @@ function addButonFrydayEvent(){
 
 // Exercício 6:
 // Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
+
 // Dica - Propriedade: event.target .
+
+function zoomIn(event) {
+  event.target.style.fontSize = '30px';
+}
+
+function zoomOut(event) {
+  event.target.style.fontSize = '20px';
+}
+
+function addZoomIn() {
+  let daysList = document.getElementsByClassName('day');
+  for (let index = 0; index < daysList.length; index += 1) {
+    daysList[index].addEventListener('mouseenter', zoomIn);
+  }
+}
+function addZoomOut() {
+  let daysList = document.getElementsByClassName('day');
+  for (let index = 0; index < daysList.length; index += 1) {
+    daysList[index].addEventListener('mouseleave', zoomOut);
+  }
+}
+
 // Exercício 7:
 // Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
