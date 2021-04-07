@@ -164,6 +164,13 @@ function createTask(task) {
 
 // O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
 
+function addCaption(cor) {
+  let element = document.createElement('div');
+  let parent = document.querySelector('.my-tasks');
+  element.classList.add('task');
+  element.style.backgroundColor = cor ;
+  parent.appendChild(element);
+}
 
 // Exercício 9:
 // Implemente uma função que adiciona um evento que ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected ela estará selecionada.
