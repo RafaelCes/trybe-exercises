@@ -76,7 +76,7 @@ function changeColor() {
     holidayList[index].style.backgroundColor = color;
   }
 }
-function addButonholidayEvent(){
+function addButonHolidayEvent(){
   let element = document.getElementById('btn-holiday');
   element.addEventListener('click', changeColor);
 }
@@ -95,13 +95,29 @@ function createButtonFriday(button) {
   element.id = 'btn-fryday';
   let parent = document.querySelector('.buttons-container');
   parent.appendChild(element);
-
+}
 // Exercício 5:
 // Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click" que modifica o texto exibido nos dias que são Sexta-feira.
 
 // É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
 
-
+function changeText() {
+  frydayList = document.getElementsByClassName('fryday');
+  let text;
+  if (frydayList[0].innerText === 'SEXTOU'){
+    text = ['4', '11', '18', '25'];
+  }
+  else {
+    text = ['SEXTOU', 'SEXTOU', 'SEXTOU', 'SEXTOU'];
+  }
+  for (index = 0; index < frydayList.length; index += 1) {
+    frydayList[index].innerText = text[index];
+  }
+}
+function addButonFrydayEvent(){ 
+  let element = document.getElementById('btn-fryday');
+  element.addEventListener('click', changeText);
+}
 
 // Exercício 6:
 // Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
