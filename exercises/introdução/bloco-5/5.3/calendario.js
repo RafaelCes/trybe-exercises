@@ -181,7 +181,7 @@ function addEventTask(){
   let taskList = document.getElementsByClassName('task');
   for (let index = 0; index < taskList.length; index += 1) {
     taskList[index].addEventListener('click', function(event) {
-      if (event.target.classList.includes('selected')) {
+      if (event.target.classList.contains('selected')) {
         event.target.classList.remove('selected');
       }
       else {
@@ -195,20 +195,20 @@ function addEventTask(){
 // Implemente uma função que adiciona um evento que ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
 
 // Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119) .
-
+function daysColor(event){
+  let selected = document.querySelector('.selected');
+  let color = selected.style.backgroundColor;
+  if (event.target.style.color === color) {
+    event.target.style.color = 'rgb(119,119,119)';
+  }
+  else {
+    event.target.style.color = color;
+  }
+}
 function addTaskColorDay() {
   let daysList = document.getElementsByClassName('day');
-  
   for (let index = 0; index < daysList.length; index += 1) {
-    daysList[index].addEventListener('click', function(event){
-      let color = document.querySelector('.selected');
-      if (event.target.style.color === 'rgb(119,119,119)') {
-        event.target.style.color = color;
-      }
-      else {
-        event.target.style.color = 'rgb(119,119,119)';
-      }
-    });
+    daysList[index].addEventListener('click', daysColor);
   }
 
 }
