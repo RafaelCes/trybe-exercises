@@ -246,3 +246,15 @@ function AddCompromisso(){
     }
   });
 }
+loadDezDays();
+createButtonHoliday('Feriados');
+addButonHolidayEvent();
+createButtonFriday('sexta-feira');
+addButonFrydayEvent();
+addZoomIn();
+addZoomOut();
+createTask('cozinhar');
+addCaption('blue');
+addEventTask();
+addTaskColorDay();
+AddCompromisso();
