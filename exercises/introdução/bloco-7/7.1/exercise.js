@@ -83,9 +83,7 @@ console.log(longestWord('antonio foi no banheiro e não sabemos o que aconteceu'
 
 const addEvent = () => {
   const button = document.getElementById('click');
-  button.addEventListener('click', count = () =>{
-     document.getElementById('count').innerText = parseInt(document.getElementById('count').innerText, 10) + 1; 
-    });
+  button.addEventListener('click',() =>{document.getElementById('count').innerText = parseInt(document.getElementById('count').innerText, 10) + 1});
 }
   addEvent();
 
