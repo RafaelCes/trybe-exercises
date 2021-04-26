@@ -28,3 +28,21 @@ h2 {
 .main-content {
   margin:0 30px;
 }
+
+@media screen and (min-width: 800px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    width:  100%;
+  }
+  header ul {
+    list-style: none;
+    display: flex;
+    
+  }
+  header ul li {
+    margin: 0 10px;
+  }
+}
