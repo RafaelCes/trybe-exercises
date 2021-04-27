@@ -48,6 +48,16 @@ console.log(studentsTotal(allLessons));
 const getValueByNumber = (object, index) => Object.values(object)[index];
 console.log(getValueByNumber(lesson1, 0));
 
+function verifyPair (object, key, value) {
+  let pair = [key,value];
+  let pairList = Object.entries(object);
+  pair = JSON.stringify(pair);
+  pairList = JSON.stringify(pairList);
+  return pairList.includes(pair);
+}
+console.log(verifyPair(lesson3, 'turno', 'noite'));
+console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
+
 // Crie uma função para adicionar o turno da manhã na lesson2 . Essa função deve possuir três parâmetros, sendo eles: o objeto a ser modificado, a chave que deverá ser adicionada e o valor dela.
 // Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
 // Crie uma função para mostrar o tamanho de um objeto.
@@ -78,3 +88,9 @@ console.log(getValueByNumber(lesson1, 0));
 // Copiar
 // console.log(getValueByNumber(lesson1, 0));
 // Output: 'Matématica'
+// Crie uma função que verifique se o par (chave / valor) existe na função. Essa função deve possuir três parâmetros, sendo eles: o objeto, o nome da chave e o valor da chave. Exemplo:
+// Copiar
+// console.log(verifyPair(lesson3, 'turno', 'noite'));
+// Output: true,
+// console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
+// Output: false
