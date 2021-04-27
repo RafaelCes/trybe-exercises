@@ -58,6 +58,37 @@ function verifyPair (object, key, value) {
 console.log(verifyPair(lesson3, 'turno', 'noite'));
 console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
 
+function mathStudents(allLessons) {
+  let total = 0;
+  const values = Object.values(allLessons);
+  for (let index in values) {
+    if (values[index].materia === 'Matemática') {
+       total += values[index].numeroEstudantes; 
+    } 
+  }
+  return total;
+}
+console.log(mathStudents(allLessons));
+
+function createReport(allLessons, teacher) {
+  const values = Object.values(allLessons);
+  let subjects = [];
+  let students = 0 ;
+  for (let index in values) {
+    if (values[index].professor === teacher) {
+      subjects.push(values[index].materia);
+      students += values[index].numeroEstudantes;
+    }
+  }
+  return {
+    professor: teacher,
+    aulas: subjects,
+    estudantes: students,
+  };
+}
+
+console.log(createReport(allLessons, 'Maria Clara'));
+
 // Crie uma função para adicionar o turno da manhã na lesson2 . Essa função deve possuir três parâmetros, sendo eles: o objeto a ser modificado, a chave que deverá ser adicionada e o valor dela.
 // Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
 // Crie uma função para mostrar o tamanho de um objeto.
@@ -94,3 +125,15 @@ console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
 // Output: true,
 // console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
 // Output: false
+
+//Bonus 
+// Crie uma função para contar quantos estudantes assistiram às aulas de Matemática. Use o objeto criado no exercício 5.
+// Crie uma função que deverá retornar um objeto que representa o relatório do professor ou professora, as aulas que ele ou ela ministrou e o número total de estudantes. Use o objeto criado no exercício 5:
+// Copiar
+// console.log(createReport(allLessons, 'Maria Clara'))
+ /* {
+  professor: 'Maria Clara',
+  aulas: [ 'Matemática', 'Matemática' ],
+  estudantes: 30 
+  }
+ */
