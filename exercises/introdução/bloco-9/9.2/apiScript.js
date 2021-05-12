@@ -15,7 +15,14 @@ const promise = new Promise((resolve, reject) => {
   const msg = 'É mais de oito mil! Essa promise deve estar quebrada!'
   reject(msg);
 })
-  .then((result) => console.log(result))
+  .then((result) => { 
+    const promise2 = new Promise((resolve, reject) => {
+    console.log(result);
+    const sum = result.reduce((acc, item) => acc + item);
+    resolve(sum);
+  })
+  .then((sum) => console.log(sum));
+})
   .catch((msg) => console.log(msg));
 
 const fetchJoke = () => {
