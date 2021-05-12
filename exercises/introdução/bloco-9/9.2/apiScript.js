@@ -12,10 +12,11 @@ const promise = new Promise((resolve, reject) => {
     const result = [check / 2, check / 3, check / 5, check / 10]
     resolve(result);
   }
-  reject()
+  const msg = 'É mais de oito mil! Essa promise deve estar quebrada!'
+  reject(msg);
 })
   .then((result) => console.log(result))
-  .catch(() => console.log('promise rejeitada'));
+  .catch((msg) => console.log(msg));
 
 const fetchJoke = () => {
   const myObject = {
