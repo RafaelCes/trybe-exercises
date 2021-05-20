@@ -1,5 +1,5 @@
-let random = require('./random');
-
+let { random, upperCase, firstLetter, join } = require('./random');
+jest.mock('./random');
 
 describe('test random with default value', () => {
   it('test if the function have been called and the result', () => {
@@ -32,5 +32,34 @@ describe('test random with two new implementations', () => {
     result = random(5);
     expect(random).toHaveBeenCalledTimes(1);
     expect(result).toBe(10);
+  });
+});
+
+describe('test uperCase, firstLetter e join', () => {
+  test('change uperCase to lower case', () => {
+    upperCase.mockImplementation((string) => string.toLowerCase());
+
+    expect(upperCase('ABCDE')).toBe('abcde');
+    expect(upperCase).toHaveBeenCalled();
+    expect(upperCase).toHaveBeenCalledTimes(1);
+    expect(upperCase).toHaveBeenCalledWith('ABCDE');
+  });
+
+  test('change firstLetter to lastLetter', () => {
+    firstLetter.mockImplementation(a => a.charAt(a.length - 1));
+
+    expect(firstLetter('abcde')).toBe('e');
+    expect(firstLetter).toHaveBeenCalled();
+    expect(firstLetter).toHaveBeenCalledTimes(1);
+    expect(firstLetter).toHaveBeenCalledWith('abcde');
+  });
+
+  test('change join to acept 3 parameters', () => {
+    join.mockImplementation((a, b, c) => `${a}${b}${c}`);
+
+    expect(join('ab', 'cd', 'e')).toBe('abcde');
+    expect(join).toHaveBeenCalled();
+    expect(join).toHaveBeenCalledTimes(1);
+    expect(join).toHaveBeenCalledWith('ab', 'cd', 'e');
   });
 });
