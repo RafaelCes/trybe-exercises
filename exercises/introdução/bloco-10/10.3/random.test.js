@@ -17,3 +17,20 @@ describe('test random with a new implementation once', () => {
     expect(random).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('test random with two new implementations', () => {
+  it('random multply 3 parameters then random doubles value', () => {
+    random = jest.fn().mockImplementation((a, b, c) => a * b * c);
+    let result = random(2, 4, 6);
+    expect(random).toHaveBeenCalledTimes(1);
+    expect(result).toBe(48);
+    result = random (1, 5, 10);
+    expect(random).toHaveBeenCalledTimes(2);
+    expect(result).toBe(50);
+    random.mockRestore();
+    random = jest.fn().mockImplementation((a) => a * 2);
+    result = random(5);
+    expect(random).toHaveBeenCalledTimes(1);
+    expect(result).toBe(10);
+  });
+});
