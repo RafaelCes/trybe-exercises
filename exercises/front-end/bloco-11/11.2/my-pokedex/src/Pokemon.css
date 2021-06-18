@@ -1,0 +1,12 @@
+.pokemon-container {
+  display:flex;
+  border: solid black 1px;
+  border-radius: 4px;
+  flex-basis: 45%;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
